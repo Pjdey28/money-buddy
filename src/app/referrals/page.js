@@ -124,13 +124,13 @@ const socialShareOptions = [
     platform: "WhatsApp",
     icon: MessageCircle,
     color: "bg-green-500",
-    shareText: "Hey! I've been using this amazing finance tracker app. Join me and we both get rewards! Use my code: PRIYA2024"
+    shareText: "Hey! I&apos;ve been using this amazing finance tracker app. Join me and we both get rewards! Use my code: PRIYA2024"
   },
   {
     platform: "Facebook",
     icon: Facebook,
     color: "bg-blue-600",
-    shareText: "Managing my finances has never been easier! Join me on this finance tracker app and let's achieve our financial goals together!"
+    shareText: "Managing my finances has never been easier! Join me on this finance tracker app and let&apos;s achieve our financial goals together!"
   },
   {
     platform: "Twitter",
@@ -142,7 +142,7 @@ const socialShareOptions = [
     platform: "Email",
     icon: Mail,
     color: "bg-gray-600",
-    shareText: "I wanted to share something that's been helping me manage my finances better..."
+    shareText: "I wanted to share something that&apos;s been helping me manage my finances better..."
   }
 ]
 

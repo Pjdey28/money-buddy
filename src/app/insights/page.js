@@ -304,33 +304,34 @@ export default function InsightsPage() {
               <TabsTrigger value="month" className="text-xs lg:text-sm">This Month</TabsTrigger>
               <TabsTrigger value="year" className="text-xs lg:text-sm">This Year</TabsTrigger>
             </TabsList>
+            
+            <div className="p-4 lg:p-6">
+              <TabsContent value="week" className="space-y-4 mt-4">
+                <div className="text-center p-6 lg:p-8 rounded-xl bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200">
+                  <h3 className="text-lg lg:text-xl font-semibold mb-2 text-gray-900">Week Summary</h3>
+                  <p className="text-gray-600 text-sm lg:text-base">Total spent: ₹2,780 | Daily average: ₹397</p>
+                  <p className="text-sm lg:text-base text-green-600 mt-2 font-medium">15% under weekly budget 🎉</p>
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="month" className="space-y-4 mt-4">
+                <div className="text-center p-6 lg:p-8 rounded-xl bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200">
+                  <h3 className="text-lg lg:text-xl font-semibold mb-2 text-gray-900">Month Summary</h3>
+                  <p className="text-gray-600 text-sm lg:text-base">Total spent: ₹8,250 | Daily average: ₹275</p>
+                  <p className="text-sm lg:text-base text-blue-600 mt-2 font-medium">Trending well for your monthly goals 📈</p>
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="year" className="space-y-4 mt-4">
+                <div className="text-center p-6 lg:p-8 rounded-xl bg-gradient-to-r from-purple-50 to-violet-50 border border-purple-200">
+                  <h3 className="text-lg lg:text-xl font-semibold mb-2 text-gray-900">Year Summary</h3>
+                  <p className="text-gray-600 text-sm lg:text-base">Total spent: ₹49,550 | Monthly average: ₹8,258</p>
+                  <p className="text-sm lg:text-base text-purple-600 mt-2 font-medium">Savings rate improved by 5% this year 🚀</p>
+                </div>
+              </TabsContent>
+            </div>
           </Tabs>
         </CardHeader>
-        <CardContent className="p-4 lg:p-6">
-          <TabsContent value="week" className="space-y-4 mt-4">
-            <div className="text-center p-6 lg:p-8 rounded-xl bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200">
-              <h3 className="text-lg lg:text-xl font-semibold mb-2 text-gray-900">Week Summary</h3>
-              <p className="text-gray-600 text-sm lg:text-base">Total spent: ₹2,780 | Daily average: ₹397</p>
-              <p className="text-sm lg:text-base text-green-600 mt-2 font-medium">15% under weekly budget 🎉</p>
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="month" className="space-y-4 mt-4">
-            <div className="text-center p-6 lg:p-8 rounded-xl bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-200">
-              <h3 className="text-lg lg:text-xl font-semibold mb-2 text-gray-900">Month Summary</h3>
-              <p className="text-gray-600 text-sm lg:text-base">Total spent: ₹8,250 | Daily average: ₹275</p>
-              <p className="text-sm lg:text-base text-blue-600 mt-2 font-medium">Trending well for your monthly goals 📈</p>
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="year" className="space-y-4 mt-4">
-            <div className="text-center p-6 lg:p-8 rounded-xl bg-gradient-to-r from-purple-50 to-violet-50 border border-purple-200">
-              <h3 className="text-lg lg:text-xl font-semibold mb-2 text-gray-900">Year Summary</h3>
-              <p className="text-gray-600 text-sm lg:text-base">Total spent: ₹49,550 | Monthly average: ₹8,258</p>
-              <p className="text-sm lg:text-base text-purple-600 mt-2 font-medium">Savings rate improved by 5% this year 🚀</p>
-            </div>
-          </TabsContent>
-        </CardContent>
       </Card>
     </div>
   )

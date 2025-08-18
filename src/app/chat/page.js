@@ -204,7 +204,7 @@ export default function ChatAndEducationPage() {
     const lowerMessage = userMessage.toLowerCase()
     
     if (lowerMessage.includes('save') || lowerMessage.includes('saving')) {
-      return "Great question about saving! Here's a simple 2-month saving plan: 1) Track all expenses for a week to identify spending patterns. 2) Cut non-essential expenses like eating out or subscription services. 3) Set up automatic transfers of ₹1000/month to savings. 4) Look for part-time income opportunities. 5) Use the 50/30/20 rule: 50% needs, 30% wants, 20% savings. Remember, I'm not a licensed financial advisor - these are general educational tips!"
+      return "Great question about saving! Here&apos;s a simple 2-month saving plan: 1) Track all expenses for a week to identify spending patterns. 2) Cut non-essential expenses like eating out or subscription services. 3) Set up automatic transfers of ₹1000/month to savings. 4) Look for part-time income opportunities. 5) Use the 50/30/20 rule: 50% needs, 30% wants, 20% savings. Remember, I&apos;m not a licensed financial advisor - these are general educational tips!"
     }
     
     if (lowerMessage.includes('loan') || lowerMessage.includes('student loan')) {
@@ -212,14 +212,14 @@ export default function ChatAndEducationPage() {
     }
     
     if (lowerMessage.includes('budget') || lowerMessage.includes('trip')) {
-      return "Budgeting for a trip? Here's how to plan: 1) Research total costs (transport, accommodation, food, activities). 2) Add 10-15% buffer for unexpected expenses. 3) Set a timeline and save weekly toward the goal. 4) Look for student discounts on transport and accommodation. 5) Consider traveling in groups to split costs. 6) Set aside money gradually rather than paying all at once. Would you like specific budgeting strategies?"
+      return "Budgeting for a trip? Here&apos;s how to plan: 1) Research total costs (transport, accommodation, food, activities). 2) Add 10-15% buffer for unexpected expenses. 3) Set a timeline and save weekly toward the goal. 4) Look for student discounts on transport and accommodation. 5) Consider traveling in groups to split costs. 6) Set aside money gradually rather than paying all at once. Would you like specific budgeting strategies?"
     }
     
     if (lowerMessage.includes('emergency fund')) {
-      return "An emergency fund is crucial! For students, aim for ₹5,000-10,000 initially. Here's how: 1) Start small - even ₹100/week adds up. 2) Keep it in a separate savings account. 3) Only use for true emergencies (medical, urgent repairs, job loss). 4) Gradually build to 3-6 months of expenses. 5) Automate transfers to make it easier. 6) Don't invest emergency funds - keep them liquid and safe."
+      return "An emergency fund is crucial! For students, aim for ₹5,000-10,000 initially. Here&apos;s how: 1) Start small - even ₹100/week adds up. 2) Keep it in a separate savings account. 3) Only use for true emergencies (medical, urgent repairs, job loss). 4) Gradually build to 3-6 months of expenses. 5) Automate transfers to make it easier. 6) Don&apos;t invest emergency funds - keep them liquid and safe."
     }
     
-    return "I understand you're looking for financial guidance. While I can provide general educational information about budgeting, saving, and financial planning, please remember that I'm not a licensed financial advisor. For specific investment advice or major financial decisions, consider consulting with a qualified professional. Is there a particular aspect of personal finance you'd like to learn more about?"
+    return "I understand you&apos;re looking for financial guidance. While I can provide general educational information about budgeting, saving, and financial planning, please remember that I&apos;m not a licensed financial advisor. For specific investment advice or major financial decisions, consider consulting with a qualified professional. Is there a particular aspect of personal finance you&apos;d like to learn more about?"
   }
 
   const getBotSuggestions = (userMessage) => {
