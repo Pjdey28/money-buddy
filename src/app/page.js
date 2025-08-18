@@ -75,22 +75,22 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 lg:space-y-6">
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0">
         <div>
-          <h1 className="text-3xl font-display font-bold text-gray-900">Good morning, Alex! 👋</h1>
-          <p className="text-gray-600 mt-1">Here's your financial overview</p>
+          <h1 className="text-2xl sm:text-3xl font-display font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Good morning, Alex! 👋</h1>
+          <p className="text-gray-600 mt-1 text-sm sm:text-base">Here&apos;s your financial overview</p>
         </div>
-        <div className="flex space-x-2">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
           <Button 
             onClick={() => setShowQuickAdd(true)}
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 w-full sm:w-auto"
           >
             <PlusCircle className="h-4 w-4 mr-2" />
             Quick Add
           </Button>
-          <Button variant="outline" className="border-2">
+          <Button variant="outline" className="border-2 w-full sm:w-auto">
             <Camera className="h-4 w-4 mr-2" />
             Scan Receipt
           </Button>
@@ -150,74 +150,74 @@ export default function Dashboard() {
       )}
 
       {/* Financial Overview Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-6">
         <Card className="card-premium card-hover-lift transition-all duration-300 bg-gradient-to-br from-green-50 to-emerald-100 border-green-200">
-          <CardContent className="p-6">
+          <CardContent className="p-4 lg:p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-green-700 font-medium">Current Balance</p>
-                <p className="text-2xl font-bold text-green-900">₹{mockData.balance.toLocaleString()}</p>
+                <p className="text-green-700 font-medium text-sm lg:text-base">Current Balance</p>
+                <p className="text-xl lg:text-2xl font-bold text-green-900">₹{mockData.balance.toLocaleString()}</p>
                 <div className="flex items-center text-xs text-green-600 mt-1">
                   <TrendingUp className="h-3 w-3 mr-1" />
                   +8.2% this month
                 </div>
               </div>
-              <div className="p-3 rounded-full bg-gradient-to-r from-green-400 to-green-600">
-                <Wallet className="h-8 w-8 text-white" />
+              <div className="p-2 lg:p-3 rounded-full bg-gradient-to-r from-green-400 to-green-600">
+                <Wallet className="h-6 w-6 lg:h-8 lg:w-8 text-white" />
               </div>
             </div>
           </CardContent>
         </Card>
 
         <Card className="card-glass card-hover-lift transition-all duration-300 bg-gradient-to-br from-blue-50 to-cyan-100 border-blue-200">
-          <CardContent className="p-6">
+          <CardContent className="p-4 lg:p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-blue-700 font-medium">Monthly Income</p>
-                <p className="text-2xl font-bold text-blue-900">₹{mockData.monthlyIncome.toLocaleString()}</p>
+                <p className="text-blue-700 font-medium text-sm lg:text-base">Monthly Income</p>
+                <p className="text-xl lg:text-2xl font-bold text-blue-900">₹{mockData.monthlyIncome.toLocaleString()}</p>
                 <div className="flex items-center text-xs text-blue-600 mt-1">
                   <ArrowUpRight className="h-3 w-3 mr-1" />
                   Stable income
                 </div>
               </div>
-              <div className="p-3 rounded-full bg-gradient-to-r from-blue-400 to-blue-600">
-                <TrendingUp className="h-8 w-8 text-white" />
+              <div className="p-2 lg:p-3 rounded-full bg-gradient-to-r from-blue-400 to-blue-600">
+                <TrendingUp className="h-6 w-6 lg:h-8 lg:w-8 text-white" />
               </div>
             </div>
           </CardContent>
         </Card>
 
         <Card className="card-elevated card-hover-lift transition-all duration-300 bg-gradient-to-br from-red-50 to-rose-100 border-red-200">
-          <CardContent className="p-6">
+          <CardContent className="p-4 lg:p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-red-700 font-medium">Monthly Expenses</p>
-                <p className="text-2xl font-bold text-red-900">₹{mockData.monthlyExpenses.toLocaleString()}</p>
+                <p className="text-red-700 font-medium text-sm lg:text-base">Monthly Expenses</p>
+                <p className="text-xl lg:text-2xl font-bold text-red-900">₹{mockData.monthlyExpenses.toLocaleString()}</p>
                 <div className="flex items-center text-xs text-red-600 mt-1">
                   <TrendingDown className="h-3 w-3 mr-1" />
                   -3.1% vs last month
                 </div>
               </div>
-              <div className="p-3 rounded-full bg-gradient-to-r from-red-400 to-red-600">
-                <TrendingDown className="h-8 w-8 text-white" />
+              <div className="p-2 lg:p-3 rounded-full bg-gradient-to-r from-red-400 to-red-600">
+                <TrendingDown className="h-6 w-6 lg:h-8 lg:w-8 text-white" />
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="card-border-gradient card-hover-lift transition-all duration-300 bg-gradient-to-br from-purple-50 to-violet-100 border-purple-200">
-          <CardContent className="p-6">
+        <Card className="card-border-gradient card-hover-lift transition-all duration-300 bg-gradient-to-br from-purple-50 to-violet-100 border-purple-200 sm:col-span-2 xl:col-span-1">
+          <CardContent className="p-4 lg:p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-purple-700 font-medium">Total Savings</p>
-                <p className="text-2xl font-bold text-purple-900">₹{mockData.savings.toLocaleString()}</p>
+                <p className="text-purple-700 font-medium text-sm lg:text-base">Total Savings</p>
+                <p className="text-xl lg:text-2xl font-bold text-purple-900">₹{mockData.savings.toLocaleString()}</p>
                 <div className="flex items-center text-xs text-purple-600 mt-1">
                   <Target className="h-3 w-3 mr-1" />
                   30% of income
                 </div>
               </div>
-              <div className="p-3 rounded-full bg-gradient-to-r from-purple-400 to-purple-600">
-                <Target className="h-8 w-8 text-white" />
+              <div className="p-2 lg:p-3 rounded-full bg-gradient-to-r from-purple-400 to-purple-600">
+                <Target className="h-6 w-6 lg:h-8 lg:w-8 text-white" />
               </div>
             </div>
           </CardContent>
@@ -252,26 +252,26 @@ export default function Dashboard() {
       )}
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 lg:gap-6">
         {/* Recent Transactions */}
-        <div className="lg:col-span-2">
+        <div className="xl:col-span-2">
           <Card className="card-premium">
             <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-t-xl border-b">
-              <CardTitle className="text-gray-900">Recent Transactions</CardTitle>
+              <CardTitle className="text-gray-900 text-lg lg:text-xl">Recent Transactions</CardTitle>
               <CardDescription className="text-gray-600">Your latest financial activity</CardDescription>
             </CardHeader>
-            <CardContent className="p-6">
-              <div className="space-y-4">
+            <CardContent className="p-4 lg:p-6">
+              <div className="space-y-3 lg:space-y-4">
                 {mockData.recentTransactions.map((transaction) => (
-                  <div key={transaction.id} className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-white/80 to-white/60 border border-white/30 hover:shadow-md transition-all duration-200 card-hover-lift">
-                    <div className="flex items-center space-x-4">
-                      <div className="text-3xl p-2 rounded-full bg-white/80">
+                  <div key={transaction.id} className="flex items-center justify-between p-3 lg:p-4 rounded-xl bg-gradient-to-r from-white/80 to-white/60 border border-white/30 hover:shadow-md transition-all duration-200 card-hover-lift">
+                    <div className="flex items-center space-x-3 lg:space-x-4">
+                      <div className="text-2xl lg:text-3xl p-2 rounded-full bg-white/80">
                         {transaction.icon}
                       </div>
                       <div>
-                        <p className="font-medium text-gray-900">{transaction.description}</p>
-                        <div className="flex items-center space-x-2 mt-1">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium border-2 ${categoryColors[transaction.category]}`}>
+                        <p className="font-medium text-gray-900 text-sm lg:text-base">{transaction.description}</p>
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 mt-1 space-y-1 sm:space-y-0">
+                          <span className={`px-2 lg:px-3 py-1 rounded-full text-xs font-medium border-2 ${categoryColors[transaction.category]}`}>
                             {transaction.category}
                           </span>
                           <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">{transaction.time}</span>
@@ -286,7 +286,7 @@ export default function Dashboard() {
                           <ArrowUpRight className="h-4 w-4 text-green-500" />
                         )}
                       </div>
-                      <span className={`font-bold text-lg ${transaction.type === 'expense' ? 'text-red-600' : 'text-green-600'}`}>
+                      <span className={`font-bold text-base lg:text-lg ${transaction.type === 'expense' ? 'text-red-600' : 'text-green-600'}`}>
                         ₹{transaction.amount}
                       </span>
                     </div>
@@ -298,25 +298,25 @@ export default function Dashboard() {
         </div>
 
         {/* Sidebar */}
-        <div className="space-y-6">
+        <div className="space-y-4 lg:space-y-6">
           {/* Savings Goals */}
           <Card className="card-glass card-floating">
             <CardHeader className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-t-xl">
-              <CardTitle className="flex items-center text-white">
+              <CardTitle className="flex items-center text-white text-lg">
                 <Target className="h-5 w-5 mr-2" />
                 Savings Goals
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 p-6">
+            <CardContent className="space-y-4 p-4 lg:p-6">
               {mockData.goals.map((goal) => (
-                <div key={goal.id} className="space-y-3 p-4 rounded-xl bg-gradient-to-r from-white/90 to-white/80 border border-white/40">
+                <div key={goal.id} className="space-y-3 p-3 lg:p-4 rounded-xl bg-gradient-to-r from-white/90 to-white/80 border border-white/40">
                   <div className="flex justify-between items-center">
                     <span className="font-medium text-sm text-gray-900">{goal.name}</span>
                     <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded-full">
                       ₹{goal.current.toLocaleString()} / ₹{goal.target.toLocaleString()}
                     </span>
                   </div>
-                  <Progress value={(goal.current / goal.target) * 100} className="h-3" />
+                  <Progress value={(goal.current / goal.target) * 100} className="h-2 lg:h-3" />
                   <div className="flex justify-between items-center">
                     <div className="text-xs text-gray-600">
                       {Math.round((goal.current / goal.target) * 100)}% complete
@@ -340,14 +340,14 @@ export default function Dashboard() {
           {/* Upcoming Events */}
           <Card className="card-border-gradient">
             <CardHeader className="bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-t-xl">
-              <CardTitle className="flex items-center text-white">
+              <CardTitle className="flex items-center text-white text-lg">
                 <Calendar className="h-5 w-5 mr-2" />
                 Upcoming Events
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 p-6">
+            <CardContent className="space-y-4 p-4 lg:p-6">
               {mockData.upcomingEvents.map((event) => (
-                <div key={event.id} className="p-4 rounded-xl bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-200 hover:shadow-lg transition-all duration-200 card-hover-lift">
+                <div key={event.id} className="p-3 lg:p-4 rounded-xl bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-200 hover:shadow-lg transition-all duration-200 card-hover-lift">
                   <div className="flex justify-between items-start">
                     <div className="flex-1">
                       <p className="font-medium text-sm text-gray-900">{event.name}</p>

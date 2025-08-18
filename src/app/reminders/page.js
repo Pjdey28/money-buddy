@@ -521,7 +521,7 @@ export default function RemindersPage() {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Bell className="h-5 w-5 mr-2" />
-                Today's Reminders
+                Today&apos;s Reminders
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">

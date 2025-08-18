@@ -22,13 +22,13 @@ const mockConversation = [
   {
     id: 1,
     type: 'bot',
-    message: "Hi! I'm MoneyBuddy, your AI financial assistant. I'm here to help with budgeting, saving tips, and general financial guidance. How can I help you today?",
+    message: "Hi! I&apos;m MoneyBuddy, your AI financial assistant. I&apos;m here to help with budgeting, saving tips, and general financial guidance. How can I help you today?",
     timestamp: new Date(Date.now() - 300000),
     suggestions: [
       "How can I save ₹2000 in 2 months?",
       "Should I take a student loan?",
       "Help me budget for a trip",
-      "What's a good emergency fund?"
+      "What&apos;s a good emergency fund?"
     ]
   }
 ]

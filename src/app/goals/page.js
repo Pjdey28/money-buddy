@@ -176,7 +176,7 @@ export default function GoalsPage() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900">Level {userLevel} Saver</h3>
-                <p className="text-gray-600">You're doing great! Keep up the momentum</p>
+                <p className="text-gray-600">You&apos;re doing great! Keep up the momentum</p>
                 <div className="flex items-center space-x-2 mt-2">
                   <Coins className="h-4 w-4 text-yellow-500" />
                   <span className="font-semibold">{userPoints} points</span>

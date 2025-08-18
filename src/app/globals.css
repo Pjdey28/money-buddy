@@ -313,9 +313,78 @@ select option {
   animation: float 6s ease-in-out infinite;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
+/* Enhanced responsive card utilities */
+@media (max-width: 640px) {
+  .card-premium,
+  .card-glass,
+  .card-elevated,
+  .card-border-gradient {
+    margin: 0.5rem 0;
+  }
+  
+  .card-hover-lift:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+  
+  .grid {
+    gap: 1rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-hover-lift:hover {
+    transform: translateY(-6px) scale(1.02);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+/* Mobile-first responsive spacing */
+.responsive-padding {
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-padding {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-padding {
+    padding: 2rem;
+  }
+}
+
+/* Responsive text sizing */
+.responsive-text-base {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-text-base {
+    font-size: 1rem;
+  }
+}
+
+.responsive-text-lg {
+  font-size: 1rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-text-lg {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-text-lg {
+    font-size: 1.25rem;
+  }
 }
 
 .card-hover-lift:hover {

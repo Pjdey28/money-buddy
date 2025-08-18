@@ -12,8 +12,8 @@ export default function RootLayout({ children }) {
       <body className="h-full">
         <div className="flex h-full">
           <Navigation />
-          <main className="flex-1 lg:ml-64">
-            <div className="p-4 lg:p-8">
+          <main className="flex-1 lg:ml-64 min-h-screen">
+            <div className="p-3 sm:p-4 lg:p-6 xl:p-8 pt-16 lg:pt-4">
               {children}
             </div>
           </main>
