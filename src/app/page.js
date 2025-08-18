@@ -100,27 +100,27 @@ export default function Dashboard() {
       {/* Quick Add Modal */}
       {showQuickAdd && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <Card className="w-full max-w-md">
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Zap className="h-5 w-5 mr-2 text-yellow-500" />
+          <Card className="w-full max-w-md card-premium card-elevated">
+            <CardHeader className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-t-xl">
+              <CardTitle className="flex items-center text-white">
+                <Zap className="h-5 w-5 mr-2 text-yellow-300" />
                 Quick Add Expense
               </CardTitle>
-              <CardDescription>Log your expense in under 5 seconds</CardDescription>
+              <CardDescription className="text-purple-100">Log your expense in under 5 seconds</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 p-6">
               <div className="flex space-x-2">
                 <Input
                   type="number"
                   placeholder="Amount"
                   value={quickAmount}
                   onChange={(e) => setQuickAmount(e.target.value)}
-                  className="text-lg"
+                  className="text-lg border-2 focus:border-purple-400"
                 />
                 <select 
                   value={quickCategory}
                   onChange={(e) => setQuickCategory(e.target.value)}
-                  className="px-3 py-2 border rounded-md"
+                  className="px-3 py-2 border-2 rounded-md focus:border-purple-400 bg-white"
                 >
                   <option>Food</option>
                   <option>Transport</option>
@@ -130,8 +130,19 @@ export default function Dashboard() {
                 </select>
               </div>
               <div className="flex space-x-2">
-                <Button onClick={handleQuickAdd} className="flex-1">Add Expense</Button>
-                <Button variant="outline" onClick={() => setShowQuickAdd(false)}>Cancel</Button>
+                <Button 
+                  onClick={handleQuickAdd} 
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                >
+                  Add Expense
+                </Button>
+                <Button 
+                  variant="outline" 
+                  onClick={() => setShowQuickAdd(false)}
+                  className="border-2 hover:bg-gray-50"
+                >
+                  Cancel
+                </Button>
               </div>
             </CardContent>
           </Card>
@@ -140,50 +151,74 @@ export default function Dashboard() {
 
       {/* Financial Overview Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="bg-gradient-to-br from-green-50 to-emerald-100 border-green-200">
+        <Card className="card-premium card-hover-lift transition-all duration-300 bg-gradient-to-br from-green-50 to-emerald-100 border-green-200">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-green-700 font-medium">Current Balance</p>
                 <p className="text-2xl font-bold text-green-900">₹{mockData.balance.toLocaleString()}</p>
+                <div className="flex items-center text-xs text-green-600 mt-1">
+                  <TrendingUp className="h-3 w-3 mr-1" />
+                  +8.2% this month
+                </div>
               </div>
-              <Wallet className="h-8 w-8 text-green-600" />
+              <div className="p-3 rounded-full bg-gradient-to-r from-green-400 to-green-600">
+                <Wallet className="h-8 w-8 text-white" />
+              </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-blue-50 to-cyan-100 border-blue-200">
+        <Card className="card-glass card-hover-lift transition-all duration-300 bg-gradient-to-br from-blue-50 to-cyan-100 border-blue-200">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-blue-700 font-medium">Monthly Income</p>
                 <p className="text-2xl font-bold text-blue-900">₹{mockData.monthlyIncome.toLocaleString()}</p>
+                <div className="flex items-center text-xs text-blue-600 mt-1">
+                  <ArrowUpRight className="h-3 w-3 mr-1" />
+                  Stable income
+                </div>
               </div>
-              <TrendingUp className="h-8 w-8 text-blue-600" />
+              <div className="p-3 rounded-full bg-gradient-to-r from-blue-400 to-blue-600">
+                <TrendingUp className="h-8 w-8 text-white" />
+              </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-red-50 to-rose-100 border-red-200">
+        <Card className="card-elevated card-hover-lift transition-all duration-300 bg-gradient-to-br from-red-50 to-rose-100 border-red-200">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-red-700 font-medium">Monthly Expenses</p>
                 <p className="text-2xl font-bold text-red-900">₹{mockData.monthlyExpenses.toLocaleString()}</p>
+                <div className="flex items-center text-xs text-red-600 mt-1">
+                  <TrendingDown className="h-3 w-3 mr-1" />
+                  -3.1% vs last month
+                </div>
               </div>
-              <TrendingDown className="h-8 w-8 text-red-600" />
+              <div className="p-3 rounded-full bg-gradient-to-r from-red-400 to-red-600">
+                <TrendingDown className="h-8 w-8 text-white" />
+              </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-purple-50 to-violet-100 border-purple-200">
+        <Card className="card-border-gradient card-hover-lift transition-all duration-300 bg-gradient-to-br from-purple-50 to-violet-100 border-purple-200">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-purple-700 font-medium">Total Savings</p>
                 <p className="text-2xl font-bold text-purple-900">₹{mockData.savings.toLocaleString()}</p>
+                <div className="flex items-center text-xs text-purple-600 mt-1">
+                  <Target className="h-3 w-3 mr-1" />
+                  30% of income
+                </div>
               </div>
-              <Target className="h-8 w-8 text-purple-600" />
+              <div className="p-3 rounded-full bg-gradient-to-r from-purple-400 to-purple-600">
+                <Target className="h-8 w-8 text-white" />
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -195,15 +230,21 @@ export default function Dashboard() {
           {mockData.alerts.map((alert) => (
             <div
               key={alert.id}
-              className={`p-4 rounded-lg border ${
-                alert.type === 'warning' ? 'bg-yellow-50 border-yellow-200 text-yellow-800' :
-                alert.type === 'success' ? 'bg-green-50 border-green-200 text-green-800' :
-                'bg-blue-50 border-blue-200 text-blue-800'
+              className={`p-4 rounded-xl border card-glass transition-all duration-200 hover:shadow-lg ${
+                alert.type === 'warning' ? 'bg-gradient-to-r from-yellow-50 to-orange-50 border-yellow-200 text-yellow-800' :
+                alert.type === 'success' ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 text-green-800' :
+                'bg-gradient-to-r from-blue-50 to-cyan-50 border-blue-200 text-blue-800'
               }`}
             >
               <div className="flex items-center">
-                <Bell className="h-5 w-5 mr-2" />
-                {alert.message}
+                <div className={`p-2 rounded-full mr-3 ${
+                  alert.type === 'warning' ? 'bg-yellow-200' :
+                  alert.type === 'success' ? 'bg-green-200' :
+                  'bg-blue-200'
+                }`}>
+                  <Bell className="h-4 w-4" />
+                </div>
+                <span className="font-medium">{alert.message}</span>
               </div>
             </div>
           ))}
@@ -214,34 +255,38 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Recent Transactions */}
         <div className="lg:col-span-2">
-          <Card>
-            <CardHeader>
-              <CardTitle>Recent Transactions</CardTitle>
-              <CardDescription>Your latest financial activity</CardDescription>
+          <Card className="card-premium">
+            <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-t-xl border-b">
+              <CardTitle className="text-gray-900">Recent Transactions</CardTitle>
+              <CardDescription className="text-gray-600">Your latest financial activity</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-6">
               <div className="space-y-4">
                 {mockData.recentTransactions.map((transaction) => (
-                  <div key={transaction.id} className="flex items-center justify-between p-3 rounded-lg bg-gray-50">
-                    <div className="flex items-center space-x-3">
-                      <div className="text-2xl">{transaction.icon}</div>
+                  <div key={transaction.id} className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-white/80 to-white/60 border border-white/30 hover:shadow-md transition-all duration-200 card-hover-lift">
+                    <div className="flex items-center space-x-4">
+                      <div className="text-3xl p-2 rounded-full bg-white/80">
+                        {transaction.icon}
+                      </div>
                       <div>
                         <p className="font-medium text-gray-900">{transaction.description}</p>
-                        <div className="flex items-center space-x-2">
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium border ${categoryColors[transaction.category]}`}>
+                        <div className="flex items-center space-x-2 mt-1">
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium border-2 ${categoryColors[transaction.category]}`}>
                             {transaction.category}
                           </span>
-                          <span className="text-xs text-gray-500">{transaction.time}</span>
+                          <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">{transaction.time}</span>
                         </div>
                       </div>
                     </div>
                     <div className="flex items-center">
-                      {transaction.type === 'expense' ? (
-                        <ArrowDownRight className="h-4 w-4 text-red-500 mr-1" />
-                      ) : (
-                        <ArrowUpRight className="h-4 w-4 text-green-500 mr-1" />
-                      )}
-                      <span className={`font-bold ${transaction.type === 'expense' ? 'text-red-600' : 'text-green-600'}`}>
+                      <div className={`p-1 rounded-full mr-2 ${transaction.type === 'expense' ? 'bg-red-100' : 'bg-green-100'}`}>
+                        {transaction.type === 'expense' ? (
+                          <ArrowDownRight className="h-4 w-4 text-red-500" />
+                        ) : (
+                          <ArrowUpRight className="h-4 w-4 text-green-500" />
+                        )}
+                      </div>
+                      <span className={`font-bold text-lg ${transaction.type === 'expense' ? 'text-red-600' : 'text-green-600'}`}>
                         ₹{transaction.amount}
                       </span>
                     </div>
@@ -255,29 +300,37 @@ export default function Dashboard() {
         {/* Sidebar */}
         <div className="space-y-6">
           {/* Savings Goals */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
+          <Card className="card-glass card-floating">
+            <CardHeader className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-t-xl">
+              <CardTitle className="flex items-center text-white">
                 <Target className="h-5 w-5 mr-2" />
                 Savings Goals
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 p-6">
               {mockData.goals.map((goal) => (
-                <div key={goal.id} className="space-y-2">
+                <div key={goal.id} className="space-y-3 p-4 rounded-xl bg-gradient-to-r from-white/90 to-white/80 border border-white/40">
                   <div className="flex justify-between items-center">
-                    <span className="font-medium text-sm">{goal.name}</span>
-                    <span className="text-xs text-gray-500">
+                    <span className="font-medium text-sm text-gray-900">{goal.name}</span>
+                    <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded-full">
                       ₹{goal.current.toLocaleString()} / ₹{goal.target.toLocaleString()}
                     </span>
                   </div>
-                  <Progress value={(goal.current / goal.target) * 100} className="h-2" />
-                  <div className="text-xs text-gray-500">
-                    {Math.round((goal.current / goal.target) * 100)}% complete
+                  <Progress value={(goal.current / goal.target) * 100} className="h-3" />
+                  <div className="flex justify-between items-center">
+                    <div className="text-xs text-gray-600">
+                      {Math.round((goal.current / goal.target) * 100)}% complete
+                    </div>
+                    <div className="text-xs font-medium text-purple-600">
+                      ₹{(goal.target - goal.current).toLocaleString()} to go
+                    </div>
                   </div>
                 </div>
               ))}
-              <Button variant="outline" className="w-full mt-4">
+              <Button 
+                variant="outline" 
+                className="w-full mt-4 border-2 border-purple-200 hover:bg-purple-50 hover:border-purple-300 transition-all"
+              >
                 <PlusCircle className="h-4 w-4 mr-2" />
                 Add New Goal
               </Button>
@@ -285,28 +338,38 @@ export default function Dashboard() {
           </Card>
 
           {/* Upcoming Events */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
+          <Card className="card-border-gradient">
+            <CardHeader className="bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-t-xl">
+              <CardTitle className="flex items-center text-white">
                 <Calendar className="h-5 w-5 mr-2" />
                 Upcoming Events
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3">
+            <CardContent className="space-y-4 p-6">
               {mockData.upcomingEvents.map((event) => (
-                <div key={event.id} className="p-3 rounded-lg bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200">
+                <div key={event.id} className="p-4 rounded-xl bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-200 hover:shadow-lg transition-all duration-200 card-hover-lift">
                   <div className="flex justify-between items-start">
-                    <div>
-                      <p className="font-medium text-sm">{event.name}</p>
-                      <p className="text-xs text-gray-500">in {event.date}</p>
+                    <div className="flex-1">
+                      <p className="font-medium text-sm text-gray-900">{event.name}</p>
+                      <div className="flex items-center mt-1">
+                        <Calendar className="h-3 w-3 text-green-600 mr-1" />
+                        <p className="text-xs text-green-700 font-medium">in {event.date}</p>
+                      </div>
                     </div>
-                    <div className="text-right">
+                    <div className="text-right bg-white/80 p-2 rounded-lg">
                       <p className="text-xs text-gray-500">Est. cost</p>
-                      <p className="font-bold text-sm">₹{event.estimatedCost}</p>
+                      <p className="font-bold text-sm text-gray-900">₹{event.estimatedCost}</p>
                     </div>
                   </div>
                 </div>
               ))}
+              <Button 
+                variant="outline" 
+                className="w-full mt-4 border-2 border-green-200 hover:bg-green-50 hover:border-green-300 transition-all"
+              >
+                <PlusCircle className="h-4 w-4 mr-2" />
+                Add Event
+              </Button>
             </CardContent>
           </Card>
         </div>
