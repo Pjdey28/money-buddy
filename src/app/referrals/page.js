@@ -255,7 +255,7 @@ export default function ReferralsPage() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600">Total Earnings</p>
-                <p className="text-3xl font-bold text-purple-600">₹{referralData.totalEarnings}</p>
+                <p className="text-3xl font-bold text-purple-600">{referralData.totalEarnings} points</p>
               </div>
               <div className="h-12 w-12 bg-purple-100 rounded-full flex items-center justify-center">
                 <DollarSign className="h-6 w-6 text-purple-600" />
@@ -400,9 +400,9 @@ export default function ReferralsPage() {
                       )}
                     </div>
                     <div className="text-sm space-y-1">
-                      <p><strong>Reward:</strong> ₹{tier.rewardPerReferral}/referral</p>
+                      <p><strong>Reward:</strong> {tier.rewardPerReferral} points/referral</p>
                       {tier.bonusReward > 0 && (
-                        <p><strong>Bonus:</strong> ₹{tier.bonusReward}</p>
+                        <p><strong>Bonus:</strong> {tier.bonusReward} points</p>
                       )}
                       <p><strong>Referrals needed:</strong> {tier.referralsNeeded}</p>
                     </div>
@@ -455,7 +455,7 @@ export default function ReferralsPage() {
                       <div className={`text-lg font-bold ${
                         referral.status === 'completed' ? 'text-green-600' : 'text-gray-600'
                       }`}>
-                        ₹{referral.reward}
+                        {referral.reward} points
                       </div>
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                         referral.status === 'completed' ? 'bg-green-100 text-green-800' :
@@ -500,7 +500,7 @@ export default function ReferralsPage() {
                 <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 text-sm font-bold">3</div>
                 <div>
                   <h4 className="font-semibold">Complete Milestones</h4>
-                  <p className="text-sm text-gray-600">Earn rewards as they use the app actively</p>
+                  <p className="text-sm text-gray-600">Earn points as they use the app actively</p>
                 </div>
               </div>
               
@@ -508,7 +508,7 @@ export default function ReferralsPage() {
                 <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 text-sm font-bold">4</div>
                 <div>
                   <h4 className="font-semibold">Get Rewarded</h4>
-                  <p className="text-sm text-gray-600">Both of you receive rewards and bonuses!</p>
+                  <p className="text-sm text-gray-600">Complete 2000 points to receive rewards and bonuses!</p>
                 </div>
               </div>
             </CardContent>
@@ -552,7 +552,7 @@ export default function ReferralsPage() {
                       <div className="flex items-center space-x-1 mt-1">
                         <Star className={`h-3 w-3 ${achievement.earned ? 'text-yellow-500' : 'text-gray-400'}`} />
                         <span className={`text-xs ${achievement.earned ? 'text-yellow-600' : 'text-gray-400'}`}>
-                          ₹{achievement.reward}
+                          {achievement.reward} points
                         </span>
                       </div>
                     </div>
@@ -580,10 +580,7 @@ export default function ReferralsPage() {
                 <span className="text-sm text-gray-600">Best Referral Source</span>
                 <span className="font-semibold">WhatsApp</span>
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">Next Payout</span>
-                <span className="font-semibold">Jan 31</span>
-              </div>
+
             </CardContent>
           </Card>
 
@@ -593,7 +590,7 @@ export default function ReferralsPage() {
               <UserPlus className="h-12 w-12 mx-auto mb-4 opacity-80" />
               <h3 className="font-bold text-lg mb-2">Invite More Friends!</h3>
               <p className="text-green-100 text-sm mb-4">
-                The more friends you invite, the more you both earn. Start sharing today!
+                The more friends you invite, the more you both earn points. Start sharing today!
               </p>
               <Button variant="secondary" className="w-full">
                 Share Now
