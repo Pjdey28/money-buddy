@@ -248,7 +248,7 @@ export default function AddExpensePage() {
             {/* Submit Button */}
             <Button 
               type="submit" 
-              className="w-full h-12 text-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+              className="w-full h-12 text-lg bg-orange-500 text-black "
               disabled={!amount || !selectedCategory}
             >
               <PlusCircle className="h-5 w-5 mr-2" />

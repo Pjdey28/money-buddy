@@ -79,13 +79,14 @@ export default function Dashboard() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-display font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Good morning, Alex! 👋</h1>
+          <h1 className="text-2xl sm:text-3xl font-display font-bold bg-gradient-to-r from-orange-400 to-orange-800
+           bg-clip-text text-transparent">Good morning, Alex! 👋</h1>
           <p className="text-gray-600 mt-1 text-sm sm:text-base">Here&apos;s your financial overview</p>
         </div>
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
           <Button 
             onClick={() => setShowQuickAdd(true)}
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 w-full sm:w-auto"
+            className="bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-300 hover:to-orange-700 w-full sm:w-auto"
           >
             <PlusCircle className="h-4 w-4 mr-2" />
             Quick Add
