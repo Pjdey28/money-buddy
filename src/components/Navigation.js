@@ -40,7 +40,7 @@ export default function Navigation() {
   return (
     <>
       {/* Mobile menu button */}
-      <div className="lg:hidden fixed top-9 right-2.5 bottom-5 left-4 z-50 ">
+      <div className="lg:hidden fixed top-2 left-1 z-50 ">
         <Button
           variant="outline"
           size="icon"
