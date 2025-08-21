@@ -45,7 +45,7 @@ const mockData = {
   ],
   upcomingEvents: [
     { id: 1, name: 'Tech Fest 2025', date: '15 days', estimatedCost: 2000 },
-    { id: 2, name: 'Friend\'s Birthday', date: '8 days', estimatedCost: 500 },
+    { id: 2, name: 'Friend Birthday', date: '8 days', estimatedCost: 500 },
   ]
 }
 
@@ -81,7 +81,7 @@ export default function Dashboard() {
         <div>
           <h1 className="text-2xl sm:text-3xl font-display font-bold bg-gradient-to-r from-orange-400 to-orange-800
            bg-clip-text text-transparent">Good morning, Ankit! 👋</h1>
-          <p className="text-gray-600 mt-1 text-sm sm:text-base">Here's your financial overview</p>
+          <p className="text-gray-600 mt-1 text-sm sm:text-base">Here is your financial overview</p>
         </div>
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
           <Button 
