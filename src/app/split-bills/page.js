@@ -106,7 +106,7 @@ export default function SplitBillsPage() {
         </div>
         <Button 
           onClick={() => setShowCreateSplit(true)}
-          className="bg-gradient-to-r from-orange-400 to-orange-800 hover:from-orange-300 hover:to-orange-700"
+          className="bg-gradient-to-r bg-blue-500 hover:bg-blue-700"
         >
           <Plus className="h-4 w-4 mr-2" />
           Create Split

@@ -159,7 +159,7 @@ export default function GoalsPage() {
         </div>
         <Button 
           onClick={() => setShowCreateGoal(true)}
-          className="bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-300 hover:to-orange-700"
+          className="bg-gradient-to-r bg-blue-500 hover:bg-blue-700"
         >
           <PlusCircle className="h-4 w-4 mr-2" />
           Create Goal

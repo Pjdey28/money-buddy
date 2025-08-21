@@ -63,7 +63,7 @@ export default function Navigation() {
               <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">₹</span>
               </div>
-              <span className="font-display font-bold text-xl text-gray-900">MoneyBuddy</span>
+              <span className="font-display font-bold text-xl text-gray-900">NxtSaving</span>
             </div>
           </div>
 
@@ -97,7 +97,7 @@ export default function Navigation() {
                 <span className="text-white font-medium text-sm">A</span>
               </div>
               <div>
-                <p className="text-sm font-medium text-gray-900">Alex Student</p>
+                <p className="text-sm font-medium text-gray-900">Ankit Student</p>
                 <p className="text-xs text-gray-500">Level 2 Saver</p>
               </div>
             </div>
